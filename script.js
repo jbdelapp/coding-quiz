@@ -1,8 +1,41 @@
+function loadQuestions() {
+    var questions = [
+        {
+            title: "Question 1: Commonly used data types DO NOT include:",
+            choices: ["strings", "booleans", "alerts", "numbers"],
+            answer: "alerts"
+        },
+        {
+            title: "Question 2: The condition in an if / else statement is enclosed within ____.",
+            choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
+            answer: "parentheses"
+        },
+        {
+            title: "Question 3: The instructions for a function are enclosed within ____.",
+            choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
+            answer: "curly brackets"
+        },
+        {
+            title: "Question 4: A property of an object that is a function is called a ____.",
+            choices: ["method", "string", "stylesheet", "boolean"],
+            answer: "method"
+        },
+        {
+            title: "Question 5: The logical operator that represents 'or' is ____.",
+            choices: ["||", "OR", "&&", "==="],
+            answer: "||"
+        }
+    ];
+};
+loadQuestions();
+
+
+
 //  Clicking the "Start Quiz" button starts the quiz, hides the landing container, and displays the quiz container
-var startButtonEl = document.querySelector("startBtn");
+var startButtonEl = document.getElementById("startBtn");
 var timeRemainingEl = document.getElementById("time-remaining");
 var finalScoreEl = document.getElementById("final-score");
-var numQuestions = questions.length;
+var numQuestions = (questions.length);
 var landingContainerEl = document.getElementById("landing-container");
 var quizContainerEl = document.getElementById("quiz-container");
 var finalContainerEl = document.getElementById("final-container");
@@ -17,7 +50,7 @@ let highScores = [];
 //     highScores = JSON.parse(localStorage.getItem("scores"));
 
 function startQuiz() {
-
+console.log()
 
     landingContainerEl.setAttribute("class", "container d-none");
     let rowEl = null;
@@ -27,9 +60,10 @@ function startQuiz() {
     quizContainerEl.setAttribute("class", "container");
     let currentQuestion = 1;
     let score = 0;
+
     //  Upon starting the quiz, the time remaining variable is assigned a value equal to 15 seconds * the number of questions and starts decreasing by 1 each second
     timeRemaining = numQuestions * 15;
-    timeRemainingEl.setAttribute("value", timeRemaining);
+    // timeRemainingEl.setAttribute("value", timeRemaining);
     //  Method for stopping the interval once it has started obtained from https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Timeouts_and_intervals
     let myInterval = setInterval(function () {
         if (timeRemaining < 1) {
@@ -40,7 +74,7 @@ function startQuiz() {
             return;
         }
         timeRemaining = timeRemaining - 1;
-        timeRemainingEl.setAttribute("value", timeRemaining);
+        // timeRemainingEl.setAttribute("value", timeRemaining);
     }, 1000);
     let clickTimeout = false;
     function generateQuestion(questionNum) {
