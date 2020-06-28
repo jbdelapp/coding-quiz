@@ -29,8 +29,6 @@ function loadQuestions() {
 };
 loadQuestions();
 
-
-
 //  Clicking the "Start Quiz" button starts the quiz, hides the landing container, and displays the quiz container
 var startButtonEl = document.getElementById("startBtn");
 var timeRemainingEl = document.getElementById("time-remaining");
@@ -46,8 +44,8 @@ let highScores = [];
 //  Method to store and retrieve arrays in/from local storage obtained from https://stackoverflow.com/questions/3357553/how-do-i-store-an-array-in-localstorage
 
 
-// if (JSON.parse(localStorage.getItem('scores')) !== null) {
-//     highScores = JSON.parse(localStorage.getItem("scores"));
+if (JSON.parse(localStorage.getItem('scores')) !== null) {
+    githighScores = JSON.parse(localStorage.getItem("scores"));
 
 function startQuiz() {
 console.log()
