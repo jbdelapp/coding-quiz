@@ -31,7 +31,7 @@ function initQuiz() {
     ];
 
     //  Clicking the "Start Quiz" button starts the quiz function.
-    // Used setAttribute to hide containers and displaying the quiz container
+    //  Used setAttribute to hide containers and displaying the quiz container
 
     const startButtonEl = document.getElementById("startBtn");
     const timeRemainingEl = document.getElementById("timeRemaining");
@@ -59,7 +59,7 @@ function initQuiz() {
         quizContainerEl.setAttribute("class", "container");
         let currentQuestion = 1;
         let score = 0;
-        
+
         // Set timer by giving 15 seconds (* 15) for every total question in array by defining in numQuestions
         let timeRemaining = numQuestions * 15;
         timeRemainingEl.setAttribute("value", timeRemaining);
@@ -180,9 +180,8 @@ function initQuiz() {
                     }, 2000);
                 });
             }
-
-
         }
+
         function saveHighScore() {
             let initialsEl = document.getElementById("initials-entry");
             let newHighScore = {
