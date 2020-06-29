@@ -1,3 +1,7 @@
+function initQuiz() {
+    //  Initialize "time remaining" variable
+        let timeRemaining=0;
+
 const questions = [
     {
         title: "Question 1: Commonly used data types DO NOT include:",
@@ -24,16 +28,11 @@ const questions = [
         choices: ["||", "OR", "&&", "==="],
         answer: "||"
     }
-];
-
-function initQuiz() {
-    //  Initialize "time remaining" variable
-        let timeRemaining=0;
-    
+];  
         
     //  Clicking the "Start Quiz" button starts the quiz, hides the landing container, and displays the quiz container
         const startButtonEl = document.getElementById("startBtn");
-        const timeRemainingEl = document.getElementById("time-remaining");
+        const timeRemainingEl = document.getElementById("timeRemaining");
         const finalScoreEl = document.getElementById("final-score");
         const numQuestions = questions.length;
         const landingContainerEl = document.getElementById("landing-container");
@@ -60,9 +59,9 @@ function initQuiz() {
             let currentQuestion = 1;
             let score = 0;
 
-    //  Upon starting the quiz, the time remaining variable is assigned a value equal to 15 seconds * the number of questions and starts decreasing by 1 each second
-            timeRemaining=numQuestions * 15;
-            //timeRemainingEl.setAttribute("value",timeRemaining);
+            let timeRemaining=numQuestions * 15;
+            timeRemainingEl.setAttribute("value",timeRemaining);
+            
             //  Method for stopping the interval once it has started obtained from https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Timeouts_and_intervals
             let myInterval = setInterval(function() {
                 if (timeRemaining<1) {
@@ -73,7 +72,7 @@ function initQuiz() {
                     return;
                 }
                 timeRemaining = timeRemaining - 1;
-                //timeRemainingEl.setAttribute("value",timeRemaining);
+                timeRemainingEl.setAttribute("value",timeRemaining);
             },1000);
             let clickTimeout = false;
             function generateQuestion(questionNum) {
@@ -149,7 +148,7 @@ function initQuiz() {
                             if (timeRemaining < 0) {
                                 timeRemaining = 0;
                             }
-                            //timeRemainingEl.setAttribute("value",timeRemaining);
+                            timeRemainingEl.setAttribute("value",timeRemaining);
                         }
                         currentQuestion++;
                         if (currentQuestion>questions.length) {
@@ -173,7 +172,7 @@ function initQuiz() {
                                         return;
                                     }
                                     timeRemaining = timeRemaining - 1;
-                                    //timeRemainingEl.setAttribute("value",timeRemaining);
+                                    timeRemainingEl.setAttribute("value",timeRemaining);
                                 },1000);
                             }
                         },2000);
