@@ -19,8 +19,14 @@ This is a training project/end of week challenge to test understanding of Javasc
 ## Website URL
 https://jbdelapp.github.io/coding-quiz/
 
-## Screenshot
+## Screenshots
+![First Screenshot](https://github.com/jbdelapp/coding-quiz/blob/master/assets/images/Start%20Quiz%20Screen%20Shot.png)
 
+![Second Screenshot](https://github.com/jbdelapp/coding-quiz/blob/master/assets/images/Question%201%20Screen%20Shot.png)
+
+![Third Screenshot](https://github.com/jbdelapp/coding-quiz/blob/master/assets/images/Initials%20for%20Results%20Screen%20Shot.png)
+
+![Fourth Screenshot](https://github.com/jbdelapp/coding-quiz/blob/master/assets/images/High%20Score%20Screen%20Shots.png)
 
 ## Status
 
